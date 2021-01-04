@@ -7,6 +7,7 @@
 
 body {
   background-color: #4B4A6F;
+  font-family: 'Roboto', sans-serif;
 }
 
 .logo {
@@ -69,6 +70,10 @@ body {
           align-items: center;
 }
 
+.container .weather-container .weather-temp p {
+  cursor: pointer;
+}
+
 .container .search-bar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -120,6 +125,87 @@ body {
   color: #C92432;
 }
 
+.container .grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  position: absolute;
+  top: 250px;
+  padding-top: 50px;
+}
+
+.container .grid .city {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 20px;
+  height: 160px;
+  -webkit-box-shadow: 0 14px 20px rgba(22, 43, 64, 0.12);
+          box-shadow: 0 14px 20px rgba(22, 43, 64, 0.12);
+}
+
+.container .grid .city p {
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.container .grid .city img {
+  width: 100%;
+  height: 100%;
+}
+
+.container .grid .city .weather-overlay {
+  height: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  top: 0;
+  background: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  width: 100%;
+  -webkit-transition: all .3s ease-in-out 0s;
+  transition: all .3s ease-in-out 0s;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.container .grid .city .weather-overlay:hover {
+  opacity: 1;
+}
+
+.container .grid .city .weather-overlay .icon-weather {
+  vertical-align: middle;
+  width: auto;
+  height: auto;
+  padding-right: 10px;
+}
+
 @media screen and (max-width: 780px) {
   .logo img {
     width: 60%;
@@ -148,6 +234,10 @@ body {
   }
   .container .search-bar input {
     font-size: 20px;
+  }
+  .container .grid {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -179,6 +269,10 @@ body {
   }
   .container .search-bar input {
     font-size: 15px;
+  }
+  .container .grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
 }
 /*# sourceMappingURL=styles.css.map */
