@@ -7,6 +7,7 @@
 body {
   background-color: #4B4A6F;
   font-family: 'Roboto', sans-serif;
+  transition: background-color 1000ms linear;
 }
 
 .logo {
@@ -128,11 +129,12 @@ body {
         background: rgba(0, 0, 0, .85);
         opacity: 0;
         width: 100%;
-        transition: all .3s ease-in-out 0s;
+        transition: all .3s ease-in-out;
         font-family: 'Roboto', sans-serif;
         font-size: 24px;
         font-weight: bold;
         cursor: pointer;
+
 
         &:hover {
           opacity: 1;
@@ -150,6 +152,12 @@ body {
 }
 
 //Responsive
+@media screen and (max-width: 1000px) {
+  .container .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 
 @media screen and (max-width: 780px) {
   .logo img {
@@ -177,9 +185,6 @@ body {
     font-size: 20px;
   }
 
-  .container .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media screen and (max-width: 480px) {
